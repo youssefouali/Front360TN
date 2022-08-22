@@ -1,0 +1,66 @@
+<div class="containe-fluid m">
+<p class="bare" style="color:#FF5330;">Accueil > Alimentation > Epicerie > SUCRE, FARINE ET AIDE À LA PÂTISSIÈRE <img class="bare-img" style="width: 8%; margin-left: 38%; padding-top: 10px;" src="assets\image\ensemble.png"></p>
+<p class="cat" style="margin-top: -40px; font-weight: 600; font-size: xx-large;">SUCRE, FARINE ET AIDE À LA PÂTISSIÈRE</p>
+</div>
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+          <a (click)="filter('farine et amidon')">
+              <img src="assets\image\farinecat.png" alt="">
+              <h6 style="margin-top: 29%;">FARINE ET AMIDON</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('chocolat manager')">
+              <img src="assets\image\chocolatcat.png" alt="">
+              <h6 >CHOCOLAT MENAGER</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a (click)="filter('sucre')">
+              <img  src="assets\image\sucrecat.png">
+              <h6 style="margin-top: 29%;">SUCRE</h6>
+
+            </a>
+      </div>
+      <div class="item">
+        <a (click)="filter('eaux florales')">
+            <img  src="assets\image\eaucat.png" alt="">
+            <h6 style="margin-top: 15%;">EAUX FLORALES</h6>
+        </a>
+    </div>
+    <div class="item">
+      <a (click)="filter('lait concentre sucre')">
+          <img  src="assets\image\laitcat.png" alt="">
+          <h6 style="margin-top: 20%;">LAIT CONCENTRE SUCRE</h6>
+      </a>
+  </div>
+  <div class="item">
+    <a (click)="filter('levure et bicarbonate')">
+        <img src="assets\image\levurecat.png" alt="">
+        <h6 style="margin-top: 20%;">LEVURE ET BICARBONATE</h6>
+    </a>
+</div>
+  </div>
+  <hr style="width: 1160px; margin-top: -7%; margin-left: 11%;">
+</div>
+<a href="/produitList" class="btn btn-primary bouton" style="font-family:poppins,bold; "> <i class="bi bi-filter-left fa-xl" style="color: white;"></i>Filtrer par  </a>
+
+<hr style="width: 1160px; margin-top: 10%; margin-left: 12%;">
+
+<div class=" container">
+  <div class="row">
+      <ng-container *ngFor="let item of filterSouscategorie | filter:searchKey:'nom'">
+          <div class="card col-md-3 col-sm-12">
+         <button class="btn btn-primary" style="width:12%; margin-top:4%; margin-left:90%;font-size: x-small; border-radius:50%;border: #FF5330; background-color: #FF5330;" ><div style="margin-left: -58% ;margin-top:30%;"><i class="bi bi-heart fa-xl"></i></div></button>
+            <img  src="{{item.image}}" alt="">
+              <hr style="position: absolute;margin-top: 90%; width: 85%; border: 0.5px solid; margin-left: 4%; color: grey;">
+              <p class="nom"> <strong>{{item.nom}}</strong></p>
+              <p >{{item.marque}}</p>
+              <p class="price"><strong>{{item.prix}} DTN</strong> </p>
+              <button class="btn btn-primary" style= "margin-top: -17%; margin-left: 80%; width: 20%;border:#2B2B68; background-color:#2B2B68 ;border-radius: 0%; size: 2% ;padding:0%; width: 13% ;color: white ;" (click)=addtocart(item)><i class="bi bi-cart3 fa-2xm	"></i></button>
+          </div>
+      </ng-container>
+
+  </div>
+</div>

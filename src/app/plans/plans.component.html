@@ -1,0 +1,139 @@
+<div class="container top-container">
+
+  <div class="row p-4">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newPlanModal">
+      <img class="icon-sm"> New plan
+    </button>
+  </div>
+
+
+  <div *ngIf test="${errorMessage ne null}">
+			<div class="alert alert-danger" role="alert">
+            "variable errorMessage"
+			</div>
+		</div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+		      <th rowspan="3" scope="col">#</th>
+		      <th rowspan="3" scope="col">Title</th>
+		      <th rowspan="3" scope="col">From</th>
+		      <th rowspan="3" scope="col">Until</th>
+		      <th colspan="4" scope="col">Average nutrition per day</th>
+		    </tr>
+        <tr>
+		      <th scope="col">Calories (kcal) </th>
+		      <th scope="col">Proteins (g)</th>
+		      <th scope="col">Fats (g)</th>
+		      <th scope="col">Carbs (g)</th>
+		    </tr>
+        <tr>
+		      <th scope="col"><span data-toggle="tooltip" data-placement="top" title="Recommended daily value per person">2000</span></th>
+		      <th scope="col"><span data-toggle="tooltip" data-placement="top" title="Recommended daily value per person">50</span></th>
+		      <th scope="col"><span data-toggle="tooltip" data-placement="top" title="Recommended daily value per person">70</span></th>
+		      <th scope="col"><span data-toggle="tooltip" data-placement="top" title="Recommended daily value per person">310</span></th>
+		    </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th colspan="8" scope="col">
+            Upcoming plans:
+          </th>
+        </tr>
+        <!--
+        <c:forEach var="plan" items="${upcomingPlans}" varStatus="status">
+				<tr class="clickable-row" data-href="meals?id=${plan.id}">
+					<th>${status.index+1 }</th>
+					<td>
+						${plan.title}
+					</td>
+					<td>${plan.startDate}</td>
+					<td>${plan.endDate}</td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getKcal()}"/></td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getProtein()}"/></td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getFat()}"/></td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getCarbs()}"/></td>
+				</tr>
+			</c:forEach>
+
+      -->
+      <tr>
+				<th colspan="8" scope="col">
+				 Past plans:
+				</th>
+			</tr>
+      <!--<c:forEach var="plan" items="${previousPlans}" varStatus="status">
+				<tr class="clickable-row" data-href="meals?id=${plan.id}">
+					<th>${status.index+1 }</th>
+					<td>
+						${plan.title}
+					</td>
+					<td>${plan.startDate}</td>
+					<td>${plan.endDate}</td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getKcal()}"/></td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getProtein()}"/></td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getFat()}"/></td>
+					<td><fmt:formatNumber type="number" maxFractionDigits="2" value="${plan.getAverageNutritionPerDay().getCarbs()}"/></td>
+				</tr>
+			</c:forEach>-->
+
+      <tr>
+				<th colspan="8" scope="col">
+					Recommended plans:
+				</th>
+			</tr>
+      </tbody>
+    </table>
+</div>
+
+<div class="modal" id="newPlanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New plan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" name="title"/>
+        </div>
+        <div class="form-group">
+          <label for="">Period</label>
+          <input type="text" class="form-control" name="dates"/>
+        </div>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="copyPlan" id="emptyPlan" value="empty" checked>
+            <label class="form-check-label" for="emptyPlan">Empty</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="copyPlan" id="oldPlan" value="old">
+            <label class="form-check-label" for="oldPlan">Copy previous plan</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="copyPlan" id="recomPlan" value="recom" disabled>
+            <label class="form-check-label" for="recom">Choose a recommended plan</label>
+          </div>
+        </div>
+        <div class="form-group">
+						<select id="selectOldPlan" name="planId" class="d-none">
+							<!--<c:forEach var='plan' items="${previousPlans}">
+								<option value="${plan.id}">${plan.title}</option>
+							</c:forEach>-->
+						</select>
+					</div>
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<input class="btn btn-primary"  type="submit" value="Create"/>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+

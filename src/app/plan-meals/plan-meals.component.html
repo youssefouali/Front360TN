@@ -1,0 +1,201 @@
+<div id="plan-container" class="container-fluid top-container">
+  <div class="row">
+    <div class="col">
+      <div class="link-to-settings m-4">
+<!-- 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#settingsModal"> -->
+<!-- 						<img class="icon-sm" src="/images/settings-white.svg"> Nustatymai -->
+<!-- 					</button> -->
+        <a class="btn btn-primary m-2" href="/plan/list">
+          All plans
+        </a>
+        <button class="btn btn-primary m-2" onclick="printPlan()">
+          <img class="icon-sm" src="/images/printer-white.svg"> Print
+        </button>
+      </div>
+      <div id="plan-info">
+        <input id="plan-id" type="hidden" value="${plan.id}">
+<!-- <%-- 					<p>Title: ${plan.title}</p> --%>
+<%-- 					<p>Days: ${plan.getDuration()}</p> --%>
+<%-- 					<p>Calories: ${plan.getCalories()}</p> --%> -->
+      </div>
+      <!-- <c:if test="${errorMessage ne null}">
+        <div class="alert alert-danger" role="alert">
+          ${errorMessage}
+        </div>
+      </c:if>
+      <c:if test="${planStyle == 'table' }">
+        <%@ include file="plan-style-table.jsp"%>
+      </c:if>
+      <c:if test="${planStyle == 'list' }">
+        <%@ include file="plan-style-list.jsp"%>
+      </c:if> -->
+    </div>
+    <div id="plan-side-container" class="col-lg-3">
+      <div id="shopping-list-container">
+        <h3>Shopping list</h3>
+        <div id="shopping-items" class="collapse"></div>
+              <a id="read-more-shopping-list" class="collapsed" data-toggle="collapse" href="#shopping-items" aria-expanded="false" aria-controls="shopping-items"></a>
+        <button class="btn btn-primary m-2" onclick="printShoppingList()"><img class="icon-sm" src="/images/printer-white.svg"> Print</button>
+      </div>
+      <div id="shopping-list-settings">
+        <div class="custom-control custom-switch" data-toggle="tooltip" data-placement="left"
+            title="Enter the products in your kitchen that will be excluded from the shopping list">
+          <input type="checkbox" class="custom-control-input" id="checkKitchenProducts">
+          <label class="custom-control-label" for="checkKitchenProducts">
+            <a href="/home#kitchen" >
+              In my kitchen</a> mark existing products as done.
+          </label>
+        </div>
+        <div class="custom-control custom-switch" data-toggle="tooltip" data-placement="left"
+            title="Do not show in checked purchases list.">
+          <input type="checkbox" class="custom-control-input" id="hideDoneItems">
+          <label class="custom-control-label" for="hideDoneItems">
+            Hide completed purchases.
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+
+<div class="modal dish-modal" id="chooseDishModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div id="dishes-container">
+      <div class='recipes-section btn-group my-4 mx-5' role='group'>
+        <a class='btn btn-light active' data-section="public">All recipes</a>
+        <a class='btn btn-light' data-section="private"> My recipes</a>
+        <a class='btn btn-light' data-section="products"> Food products</a>
+      </div>
+      <div id="dishes-list-container">
+      </div>
+      <br/>
+      <nav id="pagination-nav" aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+        </ul>
+      </nav>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal dish-modal" id="recipeDishModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class='row'>
+           <div class='col-4'>
+             <img class='modal-img'>
+           </div>
+           <div class='col-8'>
+          <div id='description' class='row my-2'>
+            <div class="col">
+              Description:<span class='ml-3'></span>
+            </div>
+          </div>
+          <div id='servings' class='row my-2'>
+            <div class="col">
+              <!-- Portions: <input type='number' id='servingsInput' min='1' max='100' class='ml-3'></input> -->
+              <span class='ml-3'></span>
+            </div>
+          </div>
+          <div id="nutrition" class='row my-2'>
+            <div class="col-4">Nutrition:</div>
+            <div class="col">
+              <div id='kcal' class = "row">
+                Calories: <span class='mx-3'></span> kcal
+              </div>
+              <div id='protein' class = "row">
+                Proteins: <span class='mx-3'></span> g
+              </div>
+              <div id='fat' class = "row">
+                Fats: <span class='mx-3'></span> g
+              </div>
+              <div id='carbs' class = "row">
+                Carbs: <span class='mx-3'></span> g
+              </div>
+            </div>
+          </div>
+          <div id='buttons' class='row m-2'>
+            <a class='remove btn btn-danger'>Remove from plan</a>
+            <a class='add btn btn-success'>Add to plan</a>
+          </div>
+        </div>
+      </div>
+      <div class='row'>
+          <div class='col' id='ingredients'></div>
+          <div class='col' id='preparations'></div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="singleDishModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class='row'>
+           <div class='col-8'>
+          <div id='amount' class='row my-2'>
+            <div class="col">
+              <!-- Quantity: <input type='number' id='amountInput' step='0.25' value='1' class='ml-3'></input> -->
+              <select id="unitInput">
+                <!-- <c:forEach var='unitType' items="${unitTypes}">
+                  <option value="${unitType.name}">${unitType.label}</option>
+                </c:forEach> -->
+              </select>
+            </div>
+          </div>
+          <div id="nutrition" class='row my-2'>
+            <div class="col-4">Nutrition: <span id="label"></span></div>
+            <div class="col">
+              <div id='kcal' class = "row">
+                Calories: <span class='mx-3'></span> kcal
+              </div>
+              <div id='protein' class = "row">
+                Proteins: <span class='mx-3'></span> g
+              </div>
+              <div id='fat' class = "row">
+                Fats: <span class='mx-3'></span> g
+              </div>
+              <div id='carbs' class = "row">
+                Carbs: <span class='mx-3'></span> g
+              </div>
+            </div>
+          </div>
+          <div id='buttons' class='row m-2'>
+            <a class='remove btn btn-danger'>Remove from plan</a>
+            <a class='add btn btn-success'>Add to plan</a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <%@ include file="footer.jsp"%> -->
+<!-- <script src="/js/plan.js"></script> -->

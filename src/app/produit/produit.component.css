@@ -1,0 +1,300 @@
+
+.card{
+  margin-left: 13%;
+  margin-top: 5%;
+  border: none;
+}
+.image:hover{
+  transform: scale(1.05,1.05);
+}
+.card-body{
+  margin-top: -40%;
+  margin-left: 120%;
+  width: 50%;
+  font-family: poppins, bold;
+  color:#2B2B68;
+}
+.image{
+background-color: whitesmoke;
+width: 300px;
+height:310px ;
+margin-left: 30%;
+
+}
+.body{margin-left: 6%;
+margin-top: -1.2%;}
+.container{
+  background-color: #2B2B68;
+  max-width: 850px;
+  height: 130px;
+  margin-bottom: 20%;
+}
+
+.categorie{
+  padding: 20px 20px;
+}
+.slider-wrap{
+  position:relative static;
+  height: 160px;
+
+}
+.block{
+  margin-left: 27%;
+  padding-top: 45px;
+  position: absolute;
+  padding: 4% 10% 1% 1%;
+}
+
+
+.slider-main{
+  position: relative;
+  width: 65%;
+  margin-left: 18%;
+  background-color: #2B2B68 ;
+  height: 160px;
+
+}
+.item{
+  display:inline-block;
+  width: 90px;
+  height: 90px;
+  background-color: #2B2B68 ;
+  position: relative;
+  margin: 0px 20px;
+  border-radius: 50%;
+  margin-left: 0%;
+border:2px solid white;
+}
+
+.prev{
+position: absolute;
+left: 1095px;
+top: 120%;
+transform: scale(-50%, -50%);
+color: white;
+
+}
+.next{
+  position: absolute;
+  right:1080px;
+  top: 120%;
+  transform:  scale(-50%, -50%);
+  color:white;
+}
+.image1{
+position: absolute;
+width: 80px;
+height: 80px;
+margin-top: 3.5%;
+margin-left:4%;
+
+
+}
+.item:hover{
+  background-color:white;
+  transform: scale(1.1);
+}
+.text{
+  margin-top: 37%;
+  font-size: small;
+  font-family: poppins,bold;
+  text-align: center;
+  font-weight: 600;
+}
+
+.m{
+  height:150px;
+    border: 2px solid #2B2B68 ;
+    width: 1290px;
+    margin-left: 100px;
+    margin-top: 2.5%;
+    background-color: whitesmoke;
+    border: whitesmoke;
+  }
+  .card2{
+    height: 400px;
+    width: 280px;
+    margin: 1%;
+    background-color: whitesmoke;
+    border: whitesmoke;
+
+  }
+  .card2:hover{
+    transform: scale(1.05,1.05);
+    box-shadow: 1px grey;
+  }
+
+  .row{
+    margin-top: 3%;
+    margin-left: 3%;
+  }
+  .card2 img{
+  position: absolute;
+  width: 50%;
+  padding-top: 15%;
+  margin-left: 25%;
+  }
+  .card2 .nom{
+    padding-top: 90%;
+  }
+  .card2 p{
+    color: #2B2B68;
+
+    font-family: poppins,bold;
+  }
+  .price{
+    margin-top: 3%;
+  }
+  .card{
+    position: relative;
+  }
+  .bouton{
+    background-color: #FF5330;
+    border:2px solid #FF5330;
+    border-radius: 0%;
+    margin-left: 7%;
+    margin-top: 1%;
+    margin-bottom: -5%;
+    font-size: large;
+  }
+  .m p{
+    position: relative;
+    padding-top: 8px ;
+    padding-left: 5%;
+  }
+   p .bare{
+    font-size: 100%;
+  }
+  .container1{
+    margin-left: -1%;  }
+
+.plus{
+margin-top: 160%;
+}
+@media (max-width:1346px) {
+ .quantite {
+    position: relative;
+}
+.bi-plus{
+  position: absolute;
+  background-color: whitesmoke;
+  padding: 9%;
+  margin-top: -11%;
+  margin-left: 0;
+}  
+
+}
+
+@media (max-width:1172px) {
+  .card-body {
+    /* margin-left: 140%; */
+    margin-top: -20%;
+    margin-left: 40%;
+    width: 30%;
+    font-family: poppins, bold;
+    color: #2B2B68;
+    position: absolute;
+}
+.image{
+  margin-left: 0%;
+  position: relative;
+}
+.card-title{
+  margin-left: -11% !important;
+}
+.card-body .btn-primary{
+  width: 180% !important;
+}
+.block {
+  margin-left: 20%;
+ 
+}
+.fa-truck{
+  margin-left: 0 !important;
+  
+  margin-top: 3% !important;
+}
+.liv-fr{
+margin-left: 5% !important;
+}
+.bare{
+  margin-bottom: 0 !important;
+}
+.fa-truck-fast{
+  margin-left: 10% !important;
+}
+.liv-eng{
+  margin-left: 16% !important;
+  margin-top: -3% !important;
+}
+ }
+
+ @media (max-width:1021px) {
+.avis{
+  margin-top: 10% !important;
+}
+.slider-main{
+  width: auto;
+}
+ }
+
+ @media (max-width:983px) {
+  .image{
+    margin-left: -10%;
+  }
+   }
+   @media (max-width:818px) {
+    .card-body{
+      margin-top: -30%;
+      margin-left: 60%;
+    }
+    .slider-main{
+    
+      margin-left: auto;}
+     }
+     @media (max-width:678px) {
+      
+      .slider-main{
+      
+        margin-left: auto;}
+        .block {
+          padding: 4% 0 1% 0;
+          margin-left: 10%;
+      }
+       }
+       @media (max-width:592px) {
+      
+        .card-body{
+          position: relative;
+          margin-top: 50%;
+          margin-left: auto;
+          width: 100%;
+        }
+        .fa-truck-fast{
+          margin-left: 20% !important;
+        }
+        .liv-eng{
+          margin-left: 32% !important;
+    margin-top: -6% !important;
+        }
+        .liv-fr{
+          margin-left: 10% !important;
+          margin-top: -5% !important;
+          }
+          
+         }
+@media (max-width:529px) {
+  .slider-main {
+    height: 250px;
+}
+.fa-truck-fast{
+  margin-left: -20% !important;
+  margin-top: 15% !important;
+}
+.liv-eng{
+  margin-left: 0% !important;
+}
+.p-catg{
+  margin-top: 30% !important;
+}
+}

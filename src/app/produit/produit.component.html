@@ -1,0 +1,78 @@
+<div class="containe-fluid " style="margin-left: 9%;margin-top: 3%;">
+  <p class="bare" style="color:#FF5330; margin-bottom: -3%;">Accueil > Alimentation > Epicerie > SUCRE, FARINE ET AIDE À LA PÂTISSIÈRE > lait concentré</p><i style ="margin-top: 1%; margin-left: 65%; color: #2B2B68;"class="fa-solid fa-truck fa-2x"></i> <p class="liv-fr" style="margin-top:-2%;font-size: 50%;margin-left: 69%;">Livraison standard <br>Gratuite sous 3 à 6 jours ouvrés</p>
+ <div style="margin-top: -40px;margin-left: 17%;"> <i style =" color: #2B2B68; margin-left: 80%; margin-top: -80px;" class="fa-solid fa-truck-fast fa-2x"></i><p class="liv-eng" style="font-size: 50%;margin-left: 84% ;margin-top:-2.3%;">Express delivery<br> 10,00 TND available</p>
+ </div></div>
+
+<div class="container-fluid">
+  <div class="card mb-3  " style=" max-width: 1200px;">
+    <div class="row g-0" style="width: 60%;">
+      <div class="image">
+       <a class="btn btn-primary"style="border:none; background-color:whitesmoke; margin-top:10px; height:25px; margin-left: 85%;"><i class="bi bi-circle-fill fa-xl" style="position:absolute ; margin-top:-5px; margin-left:-1% ;  color: #FF5330;"><i class="bi bi-heart fa-xs	" style="position: absolute; color:white; margin-top:20%; margin-left:-90%"></i></i>
+       </a>
+        <img src="assets\image\lait.jpg" style="width:88%;margin-top: -10%; margin-left: 5%;" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8 col-sm-12 body">
+        <div class="card-body">
+          <h5 class="card-title" style=" margin-top: -100px; position: absolute; font-weight: 620;  ;margin-left: -2%;">Lait Concentré Sucré Neslé</h5>
+          <p class="card-text" style="font-weight:200 ; color: #FF5330; margin-top: -40px;  font-weight: 700; margin-left: -11%; ">Prix</p>
+          <p style="color: #2B2B68;; margin-left: -23px;">10 DT</p>
+          <p class="card-text" style="  font-weight: 700;  margin-left: -11%;  ">Quantité</p>
+          <div class="quantite" style=" border:whitesmoke 2px solid;margin-left:  -11%; background-color: whitesmoke; width: 40%;height: 35px;margin-bottom: 2%; margin-top: 2%; ">
+            <p style="margin-top: 7%; margin-left: 5%;"><i class="bi bi-dash fa-xl" style="margin-right: 10%;"></i>2<i class="bi bi-plus fa-xl"style="margin-left: 10%;"></i></p>
+          </div>
+
+          <p class="card-text" style="  font-weight: 700;  margin-left: -11%; width: 50%; border-color: #FF5330;"><button class=" btn-primary" style= "margin-top: 16%; box-shadow: 2px solid whitesmoke; height: 40px; width: 280%; border-radius: 0%; border-color:#FF5330; background-color: #FF5330;"><p style="font-weight: 100; margin-top: 3%;">J'achète</button></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+          <p class="card-text avis" style=" margin-top: 3%; font-weight: 700;margin-bottom: 3%;  margin-left: 44%; width: 5%; border-color: #FF5330;"><button class=" btn-primary" style= "box-shadow: 2px solid whitesmoke; height: 40px; width: 280%; border-radius: 0%; border-color:#FF5330; background-color: #FF5330;"><p style="font-weight: 400;font-size: small; margin-top: 4%;font-family: poppins,bold; ">AVIS(5)</button></p>
+</div>
+<section class="categorie" >
+  <div claas="container-fluid" >
+
+    <div class="slider-wrap">
+      <div class="slider-main">
+        <div class="block">
+        <div class="item">
+          <img class="image1"src="assets\image\avatar1.png">
+        </div>
+        <div class="item">
+        <img class="image1" src="assets\image\avatar2.png">
+        </div>
+        <div class="item">
+          <img class="image1" src="assets\image\avatar3.png">
+        </div>
+        <div class="item">
+          <img  class="image1"src="assets\image\avatar4.png">
+        </div>
+      </div>
+      </div>
+         <div class="button-area">
+           <a class="btn" class="prev" appPrev><i class="bi bi-arrow-left fa-4x"></i></a>
+           <a class="btn" class="next" appNext><i class="bi bi-arrow-right fa-4x"></i></a>
+         </div>
+    </div>
+  </div>
+</section>
+<p class="p-catg" style="margin-top: 3%; padding-left:9%;font-weight: 620;font-family: poppins, bold; font-size: 115%; color: #FF5330;" > Dans la même catégorie<button class=" btn-primary" style= "border: 1px #FF5330; border-radius: 45%; margin-left: 60%; height: 40px; width: 10%;border-color:#FF5330; background-color: #FF5330;"><p style="font-size: 60%; font-weight: 100; margin-top: 8%;">Voir plus</p></button>
+</p>
+<div class="container-fluid container1">
+  <div class="row" style="margin-left: 10%;margin-bottom: 15%;">
+      <ng-container *ngFor="let item of filterSouscategorie | filter:searchKey:'nom' ">
+          <div class="card card2 col-md-3">
+            <i class="bi bi-circle-fill fa-xl" style="margin-top:4%; margin-left:88.5% ;  color: #FF5330;"></i><i class="bi bi-heart fa-2xm	" style="color: white; margin-top:-9%; margin-left:90%"></i>
+              <img  src="{{item.image}}" alt="">
+              <hr style="position: absolute;margin-top: 90%; width: 85%; border: 0.5px solid; margin-left: 4%; color: grey;">
+              <p class="nom"> <strong>{{item.nom}}</strong></p>
+              <p >{{item.marque}}</p>
+              <p class="price"><strong>{{item.prix}} DTN</strong> </p><button style= "margin-top: -17%; margin-left: 80%; width: 20%; background-color:#2B2B68 ;border-radius: 0%; size: 2% ;padding:0%; width: 13% ;color: white ;"  (click)=addtocart(item)><i class="bi bi-cart3 fa-2xm	"></i></button>
+          </div>
+      </ng-container>
+
+  </div>
+</div>
+
