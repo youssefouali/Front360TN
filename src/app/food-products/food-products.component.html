@@ -1,11 +1,11 @@
-<div class="container top-container">
-  <a class="btn btn-primary m-4" id="addFoodProductLink" data-toggle="modal" href="#addFoodProductModal">Add</a>
+<div class="container">
+  <!-- <a class="btn btn-primary m-4" id="addFoodProductLink" data-toggle="modal" href="#addFoodProductModal">Add</a> -->
   <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Title</th>
-         <th scope="col">Category</th>
+        <th scope="col">Category</th>
         <th scope="col">Density (g/ml)</th>
         <th scope="col">Calories</th>
         <th scope="col">Proteins</th>
@@ -15,7 +15,20 @@
       </tr>
     </thead>
     <tbody>
-     <!-- <c:forEach var="product" items="${foodProducts}" varStatus="status">
+      <ng-container *ngFor="let product of foodProducts; let i = index">
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.foodType }}</td>
+          <td>{{ product.nutrition.density }}</td>
+          <td>{{ product.nutrition.kcal }}</td>
+          <td>{{ product.nutrition.protein }}</td>
+          <td>{{ product.nutrition.fat }}</td>
+          <td>{{ product.nutrition.carbs }}</td>
+          <td><button class="btn btn-primary"  (click)=deleteFoodProduct(product.id)></button></td>
+        </tr>
+      </ng-container>
+      <!-- <c:forEach var="product" items="${foodProducts}" varStatus="status">
       <tr>
         <th>${status.index+1 }</th>
         <td>${product.name} </td>
@@ -31,9 +44,59 @@
     </c:forEach> -->
     </tbody>
   </table>
-</div>
+  <!-- <a>Add New Food Product</a>
+  <form name="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" name="name"
+      [(ngModel)]="form.name" required minlength="3" maxlength="20"
+      #name="ngModel"/>
+      </div>
+      <div class="form-group">
+        <label for="foodType">Category</label>
+        <input type="text" class="form-control" name="foodType"
+        [(ngModel)]="form.foodType"
+        #foodType="ngModel"/>
+        </div>
+        <div class="form-group">
+          <label for="desnity">Density</label>
+          <input type="text" class="form-control" name="density"
+          [(ngModel)]="form.nutrition.desnity"
+          #density="ngModel"/>
+          </div>
+          <div class="form-group">
+            <label for="kcal">Calories</label>
+            <input type="text" class="form-control" name="kcal"
+            [(ngModel)]="form.nutrition.kcal"
+            #kcal="ngModel"/>
+            </div>
+            <div class="form-group">
+              <label for="protein">Proteines</label>
+              <input type="text" class="form-control" name="protein"
+              [(ngModel)]="form.nutrition.protein"
+              #protein="ngModel"/>
+              </div>
+            <div class="form-group">
+              <label for="fat">Fat</label>
+              <input type="text" class="form-control" name="fat"
+              [(ngModel)]="form.nutrition.fat"
+              #fat="ngModel"/>
+              </div>
 
-<div class="modal fade" id="addFoodProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="form-group">
+                  <label for="carbs">Carbs</label>
+                  <input type="text" class="form-control" name="carbs"
+                  [(ngModel)]="form.nutrition.carbs"
+                  #carbs="ngModel"/>
+                  </div>
+                  <div class="form-group">
+                    <input class="btn " value="Add New Food Product" type="submit">
+                  </div>
+
+  </form>
+</div> -->
+
+<!-- <div class="modal fade" id="addFoodProductModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -43,7 +106,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- <form:form action="addFoodProduct" cssClass="form-horizontal"
+
+
+
+
+        <form:form action="addFoodProduct" cssClass="form-horizontal"
     method="post" modelAttribute="foodProduct" enctype="multipart/form-data">
           Pavadinimas
           <form:input type="text" class="form-control" path="name" required="true"/>
@@ -63,8 +130,8 @@
       <form:input type="number" class="form-control" min="0" step="0.1" path="nutrition.carbs"/>
       <form:button class="btn btn-primary"  type="submit">Išsaugoti</form:button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Atšaukti</button>
-        </form:form> -->
+        </form:form>
       </div>
     </div>
   </div>
-</div>
+</div> -->
