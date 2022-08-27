@@ -1,0 +1,46 @@
+<ng-container class="container" *ngFor="let recipe of recipes">
+  <div class="row">
+    <div class="col-6">
+      <img id="recipe-image" src="{{ recipe.image }}" />
+    </div>
+    <div class="col-6">
+      <h2>{{ recipe.title }}</h2>
+      <h3>{{ recipe.description }}</h3>
+      <span>{{ recipe.mealTypes.label }}</span>
+
+      <ng-container *ngFor="let ingredient of recipe.ingredients">
+        <div class="row">
+          <div class="col">
+            {{ ingredient.name }}
+          </div>
+          <div class="col">
+            {{ ingredient.ammount }}
+          </div>
+          <div class="col">
+            {{ ingredient.unitType }}
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <div class="row">
+          <div class="col">
+            {{recipe.preparation.description}}
+          </div>
+        </div>
+    </div>
+  </div>
+  <a class="btn btn-primary" href="">Edit</a>
+<ng-container *ngIf="!recipe.shared && recipe.inspected">
+  <a class="btn btn btn-primary" href="approveRecipe?recipeId={{recipe.id}}">Confirm</a>
+  <a class="btn btn btn-primary" href="">Reject</a>
+
+</ng-container>
+
+
+
+
+</ng-container>

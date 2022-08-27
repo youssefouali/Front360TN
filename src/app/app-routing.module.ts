@@ -20,6 +20,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { FoodProductsComponent } from './food-products/food-products.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { KitchenComponent } from './kitchen/kitchen.component';
       { path: 'admin', component: BoardAdminComponent },
       { path: 'food-products', component: FoodProductsComponent },
       { path: 'kitchen', component: KitchenComponent },
+      {path: 'recipe',component:RecipeComponent}
 
 
     ]

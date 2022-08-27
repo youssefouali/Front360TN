@@ -37,6 +37,7 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { FoodProductsComponent } from './food-products/food-products.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
 import { PlanStyleListComponent } from './plan-style-list/plan-style-list.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { PlanStyleListComponent } from './plan-style-list/plan-style-list.compon
     BoardUserComponent,
     FoodProductsComponent,
     KitchenComponent,
-    PlanStyleListComponent
+    PlanStyleListComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
