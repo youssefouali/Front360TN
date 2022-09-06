@@ -34,9 +34,9 @@
     </div>
   </div>
   <a class="btn btn-primary" href="">Edit</a>
-<ng-container *ngIf="!recipe.shared && recipe.inspected">
-  <a class="btn btn btn-primary" href="approveRecipe?recipeId={{recipe.id}}">Confirm</a>
-  <a class="btn btn btn-primary" href="">Reject</a>
+<ng-container *ngIf="recipe.shared && !recipe.inspected">
+  <a class="btn btn btn-primary" (click)=approveRecipe(recipe.id)>Confirm</a>
+  <a class="btn btn btn-primary" (click)=rejectRecipe(recipe.id)>Reject</a>
 
 </ng-container>
 

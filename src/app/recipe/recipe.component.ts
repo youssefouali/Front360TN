@@ -20,12 +20,20 @@ export class RecipeComponent implements OnInit {
     )
   }
 
-  approveRecipe():void{
-    this.recipeService.approveRecipe().subscribe(
+  approveRecipe(id:any):void{
+    this.recipeService.approveRecipe(id).subscribe(
       data => {console.log(data);
+        this.refresh();
        }
 
     )
+  }
+  rejectRecipe(id:any): void{
+    this.recipeService.rejectRecipe(id).subscribe(
+      data => {console.log(data);
+
+       }
+       )
   }
 
 

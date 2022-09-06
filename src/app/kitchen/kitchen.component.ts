@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KitchenServiceService } from '../_recette_module_services/kitchen-service.service';
 
 @Component({
   selector: 'app-kitchen',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KitchenComponent implements OnInit {
 
-  constructor() { }
+  kitchenProducts:any=[];
+  availableRecipes:any=[];
+
+  constructor(private kitchenService:KitchenServiceService) { }
 
   ngOnInit(): void {
+    this.kitchenService.getUserProducts().subscribe(
+      res => { this.kitchenProducts = res; }
+      )
+      this.kitchenService.getAvailableRecipe().subscribe(
+        res =>{this.availableRecipes = res ;}
+      )
+
   }
+
 
 }

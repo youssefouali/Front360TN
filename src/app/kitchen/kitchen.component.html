@@ -3,8 +3,11 @@
 	<h2>Foods in my kitchen:</h2>
 	<div id="kitchen-products" class="row">
 	  <div class="col-md-3">
+      <ng-container *ngFor="let product of kitchenProducts">
 	    <div class="list-group" id="list-tab" role="tablist">
+        <li class="list-group-item">{{product.foodProduct.name}}</li>
 	   	</div>
+    </ng-container>
 	  </div>
 	  <div class="col-md-7" id="list-of-products">
 	    <div class="tab-content" id="nav-tabContent">
@@ -13,6 +16,12 @@
 	  <div class="col-md-2">
 	  	<h3>I can make it:</h3>
 		<div id="available-recipes" class="row">
+      <ng-container *ngFor="let recipe of availableRecipes">
+        <div class="list-group" id="list-tab" role="tablist">
+          <li class="list-group-item">{{recipe.title}}</li>
+         </div>
+      </ng-container>
+
 
 		</div>
 	  </div>

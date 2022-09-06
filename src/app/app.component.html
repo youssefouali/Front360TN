@@ -15,6 +15,28 @@
     <li class="nav-item">
       <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
     </li>
+    <li class="nav-item">
+      <a href="/plans" class="nav-link" *ngIf="isLoggedIn" routerLink="plans">Plans</a>
+    </li>
+    <li class="nav-item">
+      <a href="/plan-meals" class="nav-link" *ngIf="isLoggedIn" routerLink="plan-meals">Plan Meals</a>
+    </li>
+
+    <li class="nav-item">
+      <a href="/recipe" class="nav-link" *ngIf="isLoggedIn" routerLink="recipe">Recipes</a>
+    </li>
+    <li class="nav-item">
+      <a href="/recetteHome" class="nav-link" *ngIf="isLoggedIn" routerLink="recetteHome">RecetteHome</a>
+    </li>
+    <li class="nav-item">
+      <a href="/recetteDetails" class="nav-link" *ngIf="isLoggedIn" routerLink="recetteDetails">recetteDetails</a>
+    </li>
+    <li class="nav-item">
+      <a href="/food-products" class="nav-link" *ngIf="isLoggedIn" routerLink="food-products">FoodProucts</a>
+    </li>
+    <li class="nav-item">
+      <a href="/kitchen" class="nav-link" *ngIf="isLoggedIn" routerLink="kitchen">My Kitchen Products</a>
+    </li>
   </ul>
   <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
     <li class="nav-item">

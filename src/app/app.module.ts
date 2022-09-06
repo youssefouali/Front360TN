@@ -39,6 +39,7 @@ import { KitchenComponent } from './kitchen/kitchen.component';
 import { PlanStyleListComponent } from './plan-style-list/plan-style-list.component';
 import { RecipeComponent } from './recipe/recipe.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
