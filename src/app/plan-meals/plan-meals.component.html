@@ -12,12 +12,24 @@
           <img class="icon-sm" src="/images/printer-white.svg"> Print
         </button>
       </div>
-      <div id="plan-info">
+      <ng-container *ngFor="let plan of listOfPlans">
+        <div>
+          <input id="" type="" value="{{plan.id}}">
+          <p>Title: {{plan.title}}</p>
+          <p>Days: {{plan.duration}}</p>
+          <P>Calories: {{plan.nutritionForPlan.kcal}}</P>
+        </div>
+
+        <table></table>
+
+      </ng-container>
+
+      <!-- <div id="plan-info">
         <input id="plan-id" type="hidden" value="${plan.id}">
-<!-- <%-- 					<p>Title: ${plan.title}</p> --%>
+<%-- 					<p>Title: ${plan.title}</p> --%>
 <%-- 					<p>Days: ${plan.getDuration()}</p> --%>
-<%-- 					<p>Calories: ${plan.getCalories()}</p> --%> -->
-      </div>
+<%-- 					<p>Calories: ${plan.getCalories()}</p> --%>
+      </div> -->
       <!-- <c:if test="${errorMessage ne null}">
         <div class="alert alert-danger" role="alert">
           ${errorMessage}

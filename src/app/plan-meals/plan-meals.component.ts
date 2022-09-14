@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlansService } from '../_recette_module_services/plans.service';
 
 @Component({
   selector: 'app-plan-meals',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanMealsComponent implements OnInit {
 
-  constructor() { }
+  listOfPlans : any = [];
+  constructor(private planService:PlansService) { }
 
   ngOnInit(): void {
+
+    this.planService.getAllUserPlans()
+      .subscribe(res => { this.listOfPlans = res; })
+
   }
+
+
+
 
 }

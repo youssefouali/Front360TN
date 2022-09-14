@@ -19,4 +19,7 @@ export class PlansService {
   getUserPreviousPlans(): Observable<any>{
     return this.http.get(API_URL+'previousUserPlans');
  }
+ getAllUserPlans():Observable<any>{
+  return this.http.get(API_URL+'listOfPlans')
+ }
 }
